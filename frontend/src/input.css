@@ -1,0 +1,16 @@
+/* src/input.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Additional custom styles can go here */
+/* styles.css */
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../public/fonts/Raleway/Raleway-VariableFont_wght.ttf) format("truetype");
+}
