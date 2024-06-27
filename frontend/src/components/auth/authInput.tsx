@@ -1,14 +1,13 @@
-import React, { ChangeEventHandler, FocusEventHandler, startTransition, useEffect, useState } from 'react';
-
-const UserIconSVG = React.lazy(() => import('./SVG/userIconSVG'));
-const EmailIconSVG = React.lazy(() => import('./SVG/emailIconSVG'));
-const PasswordIconSVG = React.lazy(() => import('./SVG/passwordIconSVG'));
-const ErrorIcon = React.lazy(() => import('./SVG/errorIconSVG'));
+import { ChangeEventHandler, FocusEventHandler, useEffect, useState } from 'react';
+import UserIconSVG from './SVG/userIconSVG';
+import EmailIconSVG from './SVG/emailIconSVG';
+import PasswordIconSVG from './SVG/passwordIconSVG';
+import ErrorIcon from './SVG/errorIconSVG';
 
 const userIconSVG = <UserIconSVG />;
 const emailIconSVG = <EmailIconSVG />;
 const passwordIconSVG = <PasswordIconSVG />;
-const errorIcon = <ErrorIcon></ErrorIcon>;
+const errorIcon = <ErrorIcon />;
 
 const nonErrorStyleClassName = 'border-[1px] border-[#CDCDCD] hover:border-gray-400';
 const errorStyleClassName = 'border-[1px] border-red-400 hover:border-red-400';
@@ -24,7 +23,7 @@ function Input(props: {
     const [showError, setShowError] = useState(false);
     let icon;
 
-    if (props.type == 'username') {
+    if (props.type === 'username') {
         icon = userIconSVG;
     } else if (props.type === 'email') {
         icon = emailIconSVG;
@@ -33,12 +32,7 @@ function Input(props: {
     }
 
     useEffect(() => {
-        // to make sure the update happens with the correct sequence
-        const timeoutId = setTimeout(() => {
-            setShowError(props.error !== null && props.isTouched);
-        }, 0);
-
-        return () => clearTimeout(timeoutId);
+        setShowError(props.error !== null && props.isTouched);
     }, [props.error, props.isTouched]);
 
     const borderStyle = showError ? errorStyleClassName : nonErrorStyleClassName;
@@ -46,7 +40,7 @@ function Input(props: {
 
     return (
         <div className='flex flex-col gap-2 mb-6 md:mb-8'>
-            <div className={`flex items-center text-lg border-solid  rounded-xl shadow-sm ${borderStyle}`}>
+            <div className={`flex items-center text-lg border-solid rounded-xl shadow-sm ${borderStyle}`}>
                 {icon}
 
                 <input
