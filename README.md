@@ -79,11 +79,11 @@ db:
     POSTGRES_DB: votesphere
   networks:
     - votesphere-networks
- ` ` `
+ ```
 
 In  `app.module.ts `:
 
- ` ` `ts
+ ```ts
 TypeOrmModule.forRoot({
   type: 'postgres',
   host: 'db',
@@ -95,12 +95,12 @@ TypeOrmModule.forRoot({
   entities: [User, Group, PollOption, Poll],
   synchronize: true,
 });
- ```
+```
 
 ### Step 4: Start the Application
-     ```bash
+  ```bash
     docker-compose up --build
-     ```
+  ```
 
 ### Step 5: final step
 4. Open your browser and navigate to  `http://localhost:3000 `.
