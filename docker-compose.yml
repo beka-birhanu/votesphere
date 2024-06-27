@@ -6,26 +6,39 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: postgres
+      POSTGRES_USER: romareo
       POSTGRES_PASSWORD: cBeYjAqy@8F}gc1H1545~!
       POSTGRES_DB: votesphere
     networks:
       - votesphere-networks
 
-  app:
+  backend:
     build:
-      context: .
+      context: ./backend
       dockerfile: Dockerfile
-    container_name: votesphere
+    container_name: votesphere-backend
     ports:
       - '9000:9000'
     depends_on:
       - db
     volumes:
-      - ./src:/app/src
+      - ./backend/src:/app/src
+    networks:
+      - votesphere-networks
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: votesphere-frontend
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend/src:/app/src
     networks:
       - votesphere-networks
 
 networks:
   votesphere-networks:
     driver: bridge
+

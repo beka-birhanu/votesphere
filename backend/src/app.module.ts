@@ -22,7 +22,7 @@ import { Vote } from './typeORM/entities/vote';
       type: 'postgres',
       host: 'db',
       port: 5432,
-      username: 'postgres',
+      username: 'romareo',
       password: 'cBeYjAqy@8F}gc1H1545~!',
       database: 'votesphere',
       autoLoadEntities: true,
