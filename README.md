@@ -98,9 +98,9 @@ TypeOrmModule.forRoot({
  ```
 
 ### Step 4: Start the Application
-     ` ` `bash
+     ```bash
     docker-compose up --build
-     ` ` `
+     ```
 
 ### Step 5: final step
 4. Open your browser and navigate to  `http://localhost:3000 `.
