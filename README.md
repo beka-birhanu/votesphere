@@ -50,7 +50,7 @@ Ensure you have the following installed on your machine:
 ### Step 1: Clone the Repository
 
 ``` bash
-git clone git@github.com:beka-birhanu/VoteSphere--backend.git
+git clone git@github.com:beka-birhanu/votesphere.git
 cd votesphere
 ```
 
@@ -98,33 +98,11 @@ TypeOrmModule.forRoot({
  ```
 
 ### Step 4: Start the Application
-
- ```bash
-docker-compose up
- ```
-
-## Frontend Installation
-
-To set up the Votesphere frontend on your local environment, follow these steps:
-
-### Prerequisites
-
-- Docker
-
-### Steps
-
-1. Clone the repository:
-     ```bash
-    git clone https://github.com/beka-birhanu/votesphere--frontend.git
-     ```
-2. Navigate to the project directory:
-     ```bash
-    cd votesphere--frontend
-     ```
-3. Build image and start server:
      ` ` `bash
     docker-compose up --build
      ` ` `
+
+### Step 5: final step
 4. Open your browser and navigate to  `http://localhost:3000 `.
 
 <p align="center">
